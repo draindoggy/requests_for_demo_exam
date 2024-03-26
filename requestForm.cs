@@ -13,7 +13,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            equipment = textBox1.Text;
+            equipment = comboBox1.SelectedItem.ToString();
             type = textBox2.Text;
             description = textBox3.Text;
 
