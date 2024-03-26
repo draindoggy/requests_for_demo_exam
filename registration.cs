@@ -1,4 +1,4 @@
-﻿namespace zayavki
+namespace zayavki
 {
     public partial class registration : Form
     {
@@ -19,11 +19,12 @@
             loginPasswordList.Add(new string[] { loginTextBox, passwordTextBox });
 
             SaveDataToFile();
+            this.Close();
         }
 
         private void SaveDataToFile()
         {
-            using (StreamWriter writer = new StreamWriter("login.txt"))
+            using (StreamWriter writer = new StreamWriter("login.txt", true))
             {
                 foreach (string[] data in loginPasswordList)
                 {
@@ -31,21 +32,5 @@
                 }
             }
         }
-        //private void LoadDataFromFile()
-        //{
-        //    if (File.Exists("login.txt"))
-        //    {
-        //        loginPasswordList.Clear();
-        //        using (StreamReader reader = new StreamReader("login.txt"))
-        //        {
-        //            string line;
-        //            while ((line = reader.ReadLine()) != null)
-        //            {
-        //                string[] data = line.Split(',');
-        //                loginPasswordList.Add(data);
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
